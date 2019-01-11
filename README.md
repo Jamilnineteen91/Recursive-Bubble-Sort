@@ -1,7 +1,11 @@
-# Recursive-Bubble-Sort
-This code executes a recursive and non-recursive bubble sort. A comparison of each functions run time is initiated at the end.
+# Sorting Algorithms
+This repo features best and worst case performance of various sorting algorithms in pytjhon.
 
-Rules for recursion: 
-  1. The algorithm must have a base case.
-  2. The algorithm must change its state in order to get to the base case.
-  3. The algorithm must call itself.
+## Completed
+
+- [x] Bubble sort.
+- [x] Selection sort.
+- [ ] Insertion sort.
+- [ ] Shell sort.
+- [ ] Merge sort.
+- [ ] Quick sort.
