@@ -6,11 +6,11 @@ def Merge_sort(nums):
 
     middle=int(len(nums)//2)#int is used to handle a floating point result.
     left=Merge_sort(nums[:middle])#Divises indices into singular lists.
-
     print(left)#Prints list division, lists with singular items are the final results.
 
     right=Merge_sort(nums[middle:])#Divises indices into singular lists.
-    print(right)
+    print(right)#Prints list division, lists with singular items are the final results.
+
     return merge(left,right)
 
 
