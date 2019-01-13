@@ -1,62 +1,48 @@
-nums = [1,4,5,576,12,83,3,24,46,100,2,4,1]
+nums = [1,4,5,-12,576,12,83,-5,3,24,46,100,2,4,1]
+print(len(nums))
 
 def Merge_sort(nums):
     if len(nums)<=1:
         return nums
 
-    first=0
-    last=len(nums)-1
-    middle=(first+last)//2
-    left=nums[:middle]
-    right=nums[middle:]
-    left=Merge_sort(left)
-    right=Merge_sort(right)
+    middle=int(len(nums)//2)#int is used to handle a result of a floating point.
+    left=Merge_sort(nums[:middle])#Divises indices into singular lists.
+
+    print(left)#Prints list division, lists with singular items are the final results.
+
+    right=Merge_sort(nums[middle:])#Divises indices into singular lists.
+    print(right)
     return merge(left,right)
 
 
-def merge(group_a,group_b):
+def merge(left, right):
     sorted_list=[]
-    index_a=0
-    index_b=0
-    length_a=len(group_a)
-    length_b=len(group_b)
-    while index_a < length_a or index_b < length_b:
-        if index_a < length_a and index_b < length_b:
-            if group_a[index_a]<=group_b[index_b]:
-                sorted_list.append(group_a[index_b])
-                index_a+=1
+    index_L=0 #index_L is used to incrementally ascend the group a list
+    index_R=0 #index_R is used to incrementally ascend the group b lis
+
+    #Lists containing more than one item will enter the while loop where they'll be sorted.
+    while index_L < len(left) and index_R < len(right):
+            #Prints left & right groups that are entering the while loop
+            print(left[index_L:], right[index_R:])
+
+            if left[index_L]<=right[index_R]:
+                sorted_list.append(left[index_L])
+                index_L+=1
+
+                #Prints the list of item/s (the smallest item between the left group and right group) to the new_list).
+                print(sorted_list)
             else:
-                sorted_list.append(group_b[index_b])
-                index_b+=1
-        elif index_a < length_a:
-            sorted_list.append(group_a[index_a])
-            i+=1
-        else:
-            sorted_list.append(group_b[index_b])
+                sorted_list.append(right[index_R])
+                index_R+=1
+
+                #Prints the list of item/s (the smallest item between the left group and right group) to the new_list).
+                print(sorted_list)
+
+    #Lists containing one item will be added to the sorted_list.
+    #The append function is unable to append lists into new_list, hence why'+=' is used.
+    sorted_list+= left[index_L:]
+    sorted_list+= right[index_R:]
     return sorted_list
 
-def merge_sort(nums):
-    divide(nums,0,len(nums)-1)
-
-def divide(nums,first,last):
-    if first<last:
-        middle=(first+last)//2
-        divide(nums,first,middle)
-        divide(nums,middle+1,last)
-        return merger(nums,first,middle,last)
-
-def merger(nums,first,middle,last):
-    sorted_list=[]
-    group_a=nums[first:middle+1]
-    group_b=nums[middle+1:last]
-    a_index=0
-    b_index=0
-    for k in range(first,last+1):
-        if group_a[a_index]<=group_b[b_index]:
-            sorted_list[k]=group_a[a_index]
-            a_index+=1
-        else:
-            sorted_list[k]=group_b[b_index]
-    return sorted_list
 
 print(Merge_sort(nums))
