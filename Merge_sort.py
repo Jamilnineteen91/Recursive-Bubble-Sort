@@ -4,7 +4,7 @@ def Merge_sort(nums):
     if len(nums)<=1:
         return nums
 
-    middle=int(len(nums)//2)#int is used to handle a result of a floating point.
+    middle=int(len(nums)//2)#int is used to handle a floating point result.
     left=Merge_sort(nums[:middle])#Divises indices into singular lists.
 
     print(left)#Prints list division, lists with singular items are the final results.
