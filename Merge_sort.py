@@ -1,5 +1,4 @@
 nums = [1,4,5,-12,576,12,83,-5,3,24,46,100,2,4,1]
-print(len(nums))
 
 def Merge_sort(nums):
     if len(nums)<=1:
