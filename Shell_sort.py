@@ -1,5 +1,7 @@
 nums = [34,-5,7,42,6,82,311,4,-45,7,33,12,74,3]
 
+
+
 def Shell_sort(alist):
     sublistCount=len(alist)//2
 
@@ -7,6 +9,7 @@ def Shell_sort(alist):
         for startPosition in range(sublistCount):
             gapInsertionSort(alist,startPosition,sublistCount)
 
+        print("Increment size:", sublistCount, "List:", alist)
         sublistCount=sublistCount//2
 
 def gapInsertionSort(alist,start,gap):
@@ -19,3 +22,5 @@ def gapInsertionSort(alist,start,gap):
 
 Shell_sort(nums)
 print(nums)
+
+
