@@ -12,6 +12,8 @@ def Shell_sort(alist):
         print("Increment size:", sublistCount, "List:", alist)
         sublistCount=sublistCount//2
 
+    return alist
+
 def gapInsertionSort(alist,start,gap):
     for i in range(start+gap,len(alist),gap):
         for j in range(i-1,-1,-1):
@@ -20,7 +22,7 @@ def gapInsertionSort(alist,start,gap):
             else:
                 break
 
-Shell_sort(nums)
-print(nums)
+print(Shell_sort(nums))
+
 
 
