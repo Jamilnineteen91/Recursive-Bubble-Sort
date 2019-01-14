@@ -1,6 +1,6 @@
 nums = [12,4,56,4,13,764,3,76]
 
-# O(n2)
+# O(n^2)
 def Insertion_sort(nums):
     for i in range(1,len(nums)):
         for j in range(i-1,-1,-1):
