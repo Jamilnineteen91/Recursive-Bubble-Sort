@@ -6,6 +6,6 @@ This repo features best and worst case performance of various sorting algorithms
 - [x] Bubble sort.
 - [x] Selection sort.
 - [x] Insertion sort.
-- [ ] Shell sort.
+- [x] Shell sort.
 - [x] Merge sort.
 - [ ] Quick sort.
